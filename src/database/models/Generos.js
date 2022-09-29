@@ -8,6 +8,7 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.INTEGER,
       },
       name: dataTypes.STRING,
+      ranking: dataTypes.STRING,
     };
   
     const config = {
