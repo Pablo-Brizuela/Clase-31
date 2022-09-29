@@ -30,7 +30,11 @@ const genresController = {
   recomended: async (req, res) => {
    
     try {
-      const peliculas = await db.Peliculas.findAll({order:[["title","ASC"]]});
+      const peliculas = await db.Peliculas.findAll({
+        order:[["title","DESC"]],
+        offset:5,
+        limit:5
+    });
       res.render("moviesList", { movies: peliculas });
     } catch (error) {
       console.log({ error });
