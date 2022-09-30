@@ -21,8 +21,8 @@ const genresController = {
   new: async (req, res) => {
    
     try {
-      const peliculas = await db.Peliculas.findAll({order:[["title","ASC"]]});
-      res.render("moviesList", { movies: peliculas });
+      const peliculas = await db.Peliculas.findAll({order:[["release_date","DESC"]]});
+      res.render("newstMovies", { movies: peliculas });
     } catch (error) {
       console.log({ error });
     }
@@ -35,7 +35,7 @@ const genresController = {
         offset:5,
         limit:5
     });
-      res.render("moviesList", { movies: peliculas });
+      res.render("recommendedMovies", { movies: peliculas });
     } catch (error) {
       console.log({ error });
     }

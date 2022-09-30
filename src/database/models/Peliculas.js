@@ -8,10 +8,10 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.INTEGER,
       },
       title: dataTypes.STRING,
-      rating: dataTypes.STRING,
-      awards: dataTypes.STRING,
-      length: dataTypes.STRING,
-      release_date: dataTypes.STRING,
+      rating: dataTypes.DECIMAL,
+      awards: dataTypes.INTEGER,
+      length: dataTypes.INTEGER,
+      release_date: dataTypes.DATE,
     };
   
     const config = {
